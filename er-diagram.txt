@@ -1,0 +1,121 @@
+┌──────────────────────────────────────────────────────────────────────┐
+│                           USER (Central Entity)                      │
+│ • email, passwordHash, name, phone, roles, otpSecret                 │
+└────────┬─────────────────────────────────────────────────────────────┘
+         │
+         ├──► createdBy ────────────────────┐
+         │                                  ▼
+         │                            ┌─────────────────────────────┐
+         ├──► updatedBy ─────────────►│         PRODUCT             │
+         │                            │ • sku, name, category       │
+         │                            │ • costPrice, sellPrice      │
+         │                            │ • currentStock, unit        │
+         │                            │ • reorderThreshold, vendor  │
+         │                            └──────────┬──────────────────┘
+         │                                       │
+         │                                       │ productId (ref)
+         │                                       │
+         │                                       ▼
+         ├──► createdBy ──────────────► ┌────────────────────────────┐
+         │    (optional for             │   STOCK TRANSACTION        │
+         │     adjustments)              │ • productId (required)     │
+         │                               │ • type: purchase/sale/     │
+         │    ┌──────────────────────────┤        adjustment          │
+         │    │                          │ • qty, unitPrice           │
+         │    │        ┌─────────────────┤ • saleId (optional)        │
+         │    │        │                 │ • purchaseId (optional)    │
+         │    │        │                 │ • createdBy (optional)     │
+         │    │        │                 │ • note, date               │
+         │    │        │                 └────────────────────────────┘
+         │    │        │                          ▲         ▲
+         │    │        │                          │         │
+         │    │        │                    saleId│         │purchaseId
+         │    │        │                          │         │
+         │    │        │                 ┌────────┴──────┐  │
+         ├──► │createdBy│────────────────┤     SALE      │  │
+         │    │        │                 │ • invoiceNumber│  │
+         │    │        │                 │ • customer     │  │
+         │    │        │                 │ • items[]      │  │
+         │    │        │                 │   - productId  │  │
+         │    │        │                 │   - qty, prices│  │
+         │    │        │                 │ • subtotal     │  │
+         │    │        │                 │ • taxes        │  │
+         │    │        │                 │ • discount     │  │
+         │    │        │                 │ • total        │  │
+         │    │        │                 │ • paymentMethod│  │
+         │    │        │                 │ • pdfUrl       │  │
+         │    │        │                 └────────────────┘  │
+         │    │        │                                     │
+         │    │        │                 ┌────────────────────┘
+         │    │        │                 │
+         │    │        │                 ▼
+         │    │        │            ┌──────────────────┐
+         ├──► │createdBy│───────────►│    PURCHASE      │
+         │    │        │            │ • supplier       │
+         │    │        │            │ • items[]        │
+         │    │        │            │   - productId    │
+         │    │        │            │   - qty          │
+         │    │        │            │   - costPrice    │
+         │    │        │            │ • totalAmount    │
+         │    │        │            │ • invoiceRef     │
+         │    │        │            │ • date           │
+         │    │        │            └──────────────────┘
+         │    │        │
+         │    │        │            ┌──────────────────┐
+         ├──► │createdBy│───────────►│    EXPENSE       │
+         │    │        │            │ • category       │
+         │    │        │            │ • amount         │
+         │    │        │            │ • note           │
+         │    │        │            │ • date           │
+         │    │        │            └──────────────────┘
+         │    │        │
+         │    │        │            ┌──────────────────┐
+         └────┴────────┴────────────┤    SETTING       │
+                                    │ • key (unique)   │
+                                    │ • value (mixed)  │
+                                    └──────────────────┘
+
+═══════════════════════════════════════════════════════════════════════
+LEGEND:
+  ────► : Reference/Foreign Key relationship
+  │     : Connects related fields
+  (required) : Field must be populated
+  (optional) : Field is optional
+═══════════════════════════════════════════════════════════════════════
+
+RELATIONSHIP SUMMARY:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. USER → PRODUCT
+   - createdBy (1:many) - User who created the product
+   - updatedBy (1:many) - User who last updated the product
+
+2. USER → SALE (1:many)
+   - createdBy (required) - User who created the sale
+
+3. USER → PURCHASE (1:many)
+   - createdBy (required) - User who created the purchase
+
+4. USER → EXPENSE (1:many)
+   - createdBy (required) - User who created the expense
+
+5. USER → STOCK TRANSACTION (1:many)
+   - createdBy (optional) - User who made manual adjustment
+
+6. PRODUCT → STOCK TRANSACTION (1:many)
+   - productId (required) - Product being transacted
+
+7. SALE → STOCK TRANSACTION (1:many)
+   - saleId (optional) - Sale that triggered stock reduction
+
+8. PURCHASE → STOCK TRANSACTION (1:many)
+   - purchaseId (optional) - Purchase that triggered stock addition
+
+9. PRODUCT → SALE.items[] (many:many)
+   - productId - Products sold in the sale
+
+10. PRODUCT → PURCHASE.items[] (many:many)
+    - productId - Products purchased
+
+11. SETTING (standalone)
+    - No relationships, stores system configuration
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
