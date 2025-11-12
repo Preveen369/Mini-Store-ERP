@@ -81,6 +81,7 @@ LEGEND:
   │     : Connects related fields
   (required) : Field must be populated
   (optional) : Field is optional
+  USER : may be CASHIER(limited access) or ADMIN(full access)
 ═══════════════════════════════════════════════════════════════════════
 
 RELATIONSHIP SUMMARY:
