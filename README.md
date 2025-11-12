@@ -7,7 +7,7 @@
 ![Database](https://img.shields.io/badge/Database-MongoDB-emerald.svg)
 ![Language](https://img.shields.io/badge/Language-TypeScript-yellow.svg)
 ![AI](https://img.shields.io/badge/AI-Groq_LLM-purple.svg)
-![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)
+
 
 The **Mini-Store-ERP** is a comprehensive full-stack MERN (MongoDB, Express.js, React, Node.js) Enterprise Resource Planning system designed for small retail stores. It features modern inventory management, real-time sales tracking, AI-powered business insights via Groq LLM, and automated PDF invoice generation. Built with TypeScript for type safety, it offers a responsive dashboard with charts, secure JWT authentication with role-based access control, and natural language query processing.
 
