@@ -10,7 +10,7 @@ export default defineConfig({
     // This prevents CORS issues and allows using relative URLs
     proxy: {
       '/api': {
-        target: 'https://mini-store-erp-backend.onrender.com',
+        target: 'https://mini-store-erp-backend.onrender.com/api/v1',
         changeOrigin: true,
         secure: false,
       }
