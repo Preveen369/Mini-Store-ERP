@@ -8,14 +8,14 @@ The **Mini-Store-ERP Backend Server** is a robust, scalable RESTful API built wi
 
 ## ✨ Features
 
-**🔐 Authentication & Authorization:** Secure JWT-based authentication with role-based access control (Admin/Cashier)
-**📦 Product Management:** Complete CRUD operations, real-time stock tracking, reorder alerts, and vendor management
-**🛒 Purchase Management:** Track supplier purchases with automatic stock updates and transaction history
-**💰 Sales & POS:** Fast POS interface with automatic stock deduction, PDF invoices, and multiple payment methods
-**📊 Reports & Analytics:** Real-time revenue tracking, COGS calculation, top products analysis, and visual charts
-**🤖 AI-Powered Insights:** Natural language queries, automated business insights, and smart reorder suggestions via Groq LLM
-**📄 PDF Generation:** Server-side invoice generation and client-side report export
-**🎨 Modern UI:** Responsive TailwindCSS design with interactive dashboard and real-time data visualization
+- **🔐 Authentication & Authorization**: Secure JWT-based authentication with role-based access control (Admin/Cashier)
+- **📦 Product Management**: Complete CRUD operations, real-time stock tracking, reorder alerts, and vendor management
+- **🛒 Purchase Management**: Track supplier purchases with automatic stock updates and transaction history
+- **💰 Sales & POS**: Fast POS interface with automatic stock deduction, PDF invoices, and multiple payment methods
+- **📊 Reports & Analytics**: Real-time revenue tracking, COGS calculation, top products analysis, and visual charts
+- **🤖 AI-Powered Insights**: Natural language queries, automated business insights, and smart reorder suggestions via Groq LLM
+- **📄 PDF Generation**: Server-side invoice generation and client-side report export
+- **🎨 Modern UI**: Responsive TailwindCSS design with interactive dashboard and real-time data visualization
 
 ---
 
