@@ -33,7 +33,6 @@ Thumbs.db
 *.sublime-workspace
 
 # PDF files (except templates)
-*.pdf
 !**/templates/**/*.pdf
 
 # Coverage
