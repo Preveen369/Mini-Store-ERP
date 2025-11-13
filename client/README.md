@@ -1,12 +1,6 @@
 # 🌟 Mini-Store-ERP - Frontend Client
 
-![Framework](https://img.shields.io/badge/Framework-React_18-blue.svg)
-![Language](https://img.shields.io/badge/Language-TypeScript-yellow.svg)
-![Build](https://img.shields.io/badge/Build-Vite-purple.svg)
-![UI](https://img.shields.io/badge/UI-TailwindCSS-cyan.svg)
-![State](https://img.shields.io/badge/State-Zustand-orange.svg)
-
-The **Mini-Store-ERP Client** is a modern, responsive React-based frontend application built with TypeScript and Vite. It provides an intuitive user interface for managing retail store operations including inventory, sales, purchases, expenses, and AI-powered business insights. The application features a beautiful dashboard with real-time analytics, interactive charts powered by Recharts, and seamless integration with the backend API for complete store management.
+The **Mini-Store-ERP Client** is a modern, responsive React-based frontend application built with TypeScript and Vite. It provides an intuitive user interface for managing retail store operations including inventory, sales, purchases, expenses, and AI-powered business insights.
 
 🔗 **Main Project**: [Main README](../README.md) | [Server README](../server/README.md)
 
