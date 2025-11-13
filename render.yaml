@@ -3,7 +3,7 @@ services:
   - type: web
     name: mini-store-erp-backend
     runtime: node
-    region: oregon
+    region: singapore
     plan: free
     buildCommand: cd server && npm install && npm run build
     startCommand: cd server && npm start
