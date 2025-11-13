@@ -8,68 +8,14 @@ The **Mini-Store-ERP Client** is a modern, responsive React-based frontend appli
 
 ## ✨ Features
 
-### 🎨 User Interface
-- **Modern Design**: Clean and intuitive interface built with TailwindCSS
-- **Responsive Layout**: Fully responsive design that works on desktop, tablet, and mobile
-- **Dark Mode Ready**: Component structure supports easy dark mode implementation
-- **Toast Notifications**: Real-time user feedback with React Hot Toast
-- **Loading States**: Smooth loading indicators for better UX
-
-### 📊 Dashboard
-- **Real-time Analytics**: Live revenue, profit, and sales metrics
-- **Visual Charts**: Interactive charts and graphs using Recharts
-- **Quick Stats**: Key performance indicators at a glance
-- **Top Products**: Visual representation of best-selling items
-- **Low Stock Alerts**: Immediate visibility of products needing reorder
-- **AI Insights**: Automated business insights powered by Groq LLM
-
-### 📦 Product Management
-- **Product Catalog**: Browse and search products with filters
-- **CRUD Operations**: Create, read, update, and delete products
-- **Stock Tracking**: Real-time stock level monitoring
-- **Category Filtering**: Organize products by categories
-- **Search Functionality**: Fast text-based product search
-- **Pagination**: Efficient data loading with paginated views
-
-### 💰 Sales Management
-- **POS Interface**: Fast and intuitive point-of-sale system
-- **Invoice Generation**: Professional PDF invoices with jsPDF
-- **Customer Tracking**: Record customer information for each sale
-- **Payment Methods**: Support for cash, card, UPI, and credit
-- **Sales History**: Complete transaction history with filters
-- **Discount Calculator**: Easy discount application
-
-### 🛒 Purchase Management
-- **Purchase Entry**: Record supplier purchases efficiently
-- **Supplier Tracking**: Maintain supplier information
-- **Stock Updates**: Automatic stock level updates
-- **Purchase History**: Complete purchase transaction records
-
-### 💸 Expense Tracking
-- **Expense Recording**: Track business expenses by category
-- **Date Filtering**: Filter expenses by date range
-- **Category Management**: Organize expenses by type
-- **Expense Reports**: Generate expense summaries
-
-### 📈 Reports & Analytics
-- **Summary Reports**: Revenue, profit, and COGS analysis
-- **Top Products**: Best-selling product analytics
-- **Date Range Selection**: Custom period reporting
-- **PDF Export**: Download reports as PDF documents
-- **Visual Analytics**: Charts and graphs for data visualization
-
-### 🤖 AI Assistant
-- **Natural Language Queries**: Ask questions in plain English
-- **Business Insights**: Get AI-powered recommendations
-- **Conversational Interface**: Chat-like interaction with data
-- **Smart Suggestions**: Reorder and optimization recommendations
-
-### 🔐 Authentication
-- **Login/Register**: Secure user authentication
-- **JWT Tokens**: Token-based session management
-- **Protected Routes**: Route guards for authenticated pages
-- **Persistent Sessions**: Auto-login with stored tokens
-- **Logout Functionality**: Secure session termination
+**🔐 Authentication & Authorization:** Secure JWT-based authentication with role-based access control (Admin/Cashier)
+**📦 Product Management:** Complete CRUD operations, real-time stock tracking, reorder alerts, and vendor management
+**🛒 Purchase Management:** Track supplier purchases with automatic stock updates and transaction history
+**💰 Sales & POS:** Fast POS interface with automatic stock deduction, PDF invoices, and multiple payment methods
+**📊 Reports & Analytics:** Real-time revenue tracking, COGS calculation, top products analysis, and visual charts
+**🤖 AI-Powered Insights:** Natural language queries, automated business insights, and smart reorder suggestions via Groq LLM
+**📄 PDF Generation:** Server-side invoice generation and client-side report export
+**🎨 Modern UI:** Responsive TailwindCSS design with interactive dashboard and real-time data visualization
 
 ---
 
