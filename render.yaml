@@ -1,0 +1,29 @@
+services:
+  # Backend API Service
+  - type: web
+    name: mini-store-erp-backend
+    runtime: node
+    region: oregon
+    plan: free
+    buildCommand: cd server && npm install && npm run build
+    startCommand: cd server && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_EXPIRE
+        value: 7d
+      - key: JWT_REFRESH_EXPIRE
+        value: 30d
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_BASE_URL
+        value: https://api.groq.com/openai/v1
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
+    healthCheckPath: /
