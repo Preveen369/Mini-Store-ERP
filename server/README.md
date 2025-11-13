@@ -1,12 +1,5 @@
 # 🌟 Mini-Store-ERP - Backend Server
 
-![Runtime](https://img.shields.io/badge/Runtime-Node.js-green.svg)
-![Framework](https://img.shields.io/badge/Framework-Express.js-blue.svg)
-![Database](https://img.shields.io/badge/Database-MongoDB-emerald.svg)
-![Language](https://img.shields.io/badge/Language-TypeScript-yellow.svg)
-![AI](https://img.shields.io/badge/AI-Groq_LLM-purple.svg)
-![Auth](https://img.shields.io/badge/Auth-JWT-red.svg)
-
 The **Mini-Store-ERP Backend Server** is a robust, scalable RESTful API built with Node.js, Express.js, and TypeScript. It powers the complete retail store management system with secure authentication, comprehensive inventory management, sales tracking, AI-powered business insights using Groq LLM, and automated PDF invoice generation. The server implements industry-standard security practices including JWT authentication, rate limiting, input validation, and MongoDB injection prevention.
 
 🔗 **Main Project**: [Main README](../README.md) | [Client README](../client/README.md)
@@ -15,130 +8,14 @@ The **Mini-Store-ERP Backend Server** is a robust, scalable RESTful API built wi
 
 ## ✨ Features
 
-### 🔐 Authentication & Authorization
-
-- **JWT Authentication**: Secure token-based authentication with configurable expiration
-- **Password Security**: bcrypt hashing with 12 rounds for maximum security
-- **Optional OTP Login**: Two-factor authentication support
-- **Role-Based Access Control**: Admin and Cashier roles with different permissions
-- **Session Management**: Token refresh and automatic logout
-- **Secure Password Reset**: OTP-based password recovery
-
-### 📦 Product Management
-
-- **Complete CRUD Operations**: Create, read, update, and delete products
-- **SKU Management**: Unique product identification system
-- **Stock Tracking**: Real-time inventory level monitoring
-- **Reorder Thresholds**: Automatic low-stock alerts
-- **Category Organization**: Product categorization system
-- **Vendor Management**: Supplier information tracking
-- **Search & Filter**: Advanced product search and filtering
-- **Pagination Support**: Efficient data retrieval
-
-### 🛒 Purchase Management
-
-- **Purchase Recording**: Track all supplier purchases
-- **Automatic Stock Updates**: Stock levels updated on purchase entry
-- **Stock Transaction History**: Complete audit trail of stock movements
-- **Supplier Tracking**: Comprehensive supplier information
-- **Invoice References**: Link purchases to supplier invoices
-- **Bulk Operations**: Support for multiple items per purchase
-
-### 💰 Sales & Invoicing
-
-- **Sales Recording**: Complete sales transaction management
-- **Automatic Stock Deduction**: Real-time inventory updates
-- **Invoice Generation**: Professional PDF invoices using Puppeteer
-- **Multiple Payment Methods**: Cash, card, UPI, and credit support
-- **Customer Tracking**: Customer information management
-- **Discount Management**: Flexible discount application
-- **Tax Calculations**: Automated tax computation
-- **Sales Analytics**: Detailed sales reporting
-
-### 📊 Reports & Analytics
-
-- **Summary Reports**: Revenue, profit, and COGS analysis
-- **Top Products**: Best-selling product identification
-- **Low Stock Reports**: Products needing reorder
-- **Date Range Filtering**: Custom period analysis
-- **Expense Tracking**: Business expense categorization
-- **Profit Margins**: Gross and net profit calculations
-- **Performance Metrics**: Key performance indicators
-
-### 🤖 AI-Powered Insights (Groq LLM)
-
-- **Natural Language Processing**: Convert plain English to database queries
-- **Business Insights**: AI-generated actionable recommendations
-- **Reorder Suggestions**: Intelligent inventory management
-- **Expense Classification**: Automatic expense categorization
-- **Trend Analysis**: AI-powered sales trend identification
-- **Groq API Integration**: Fast LLM inference with LLaMA models
-
-### 📄 PDF Generation
-
-- **Server-Side Rendering**: Puppeteer-based PDF generation
-- **Customizable Templates**: Handlebars template engine
-- **Professional Invoices**: Clean, printable invoice design
-- **Automatic Storage**: PDF storage and retrieval
-- **Batch Generation**: Support for bulk PDF creation
-
-### 🔒 Security Features
-
-- **JWT Token Security**: Signed tokens with secret key
-- **Password Hashing**: bcrypt with salt rounds
-- **Rate Limiting**: API request rate limiting
-- **Helmet.js**: HTTP security headers
-- **CORS Protection**: Configurable cross-origin resource sharing
-- **Input Validation**: express-validator for request validation
-- **MongoDB Injection Prevention**: Query sanitization
-- **Error Handling**: Comprehensive error management
-
-### 📡 API Features
-
-- **RESTful Architecture**: Standard REST API design
-- **Versioned Endpoints**: API versioning support (v1)
-- **Consistent Responses**: Standardized response format
-- **Error Messages**: Clear, actionable error messages
-- **Request Logging**: Morgan HTTP logger
-- **API Documentation**: Comprehensive endpoint documentation
-
----
-
-## 🛠️ Tech Stack
-
-### Core Technologies
-
-- **Runtime**: Node.js (v18+)
-- **Language**: TypeScript
-- **Framework**: Express.js
-- **Database**: MongoDB with Mongoose ODM
-
-### Authentication & Security
-
-- **JWT**: jsonwebtoken
-- **Password Hashing**: bcrypt
-- **Security Headers**: helmet
-- **CORS**: cors
-- **Rate Limiting**: express-rate-limit
-- **Validation**: express-validator
-
-### AI & PDF
-
-- **LLM**: Groq API (LLaMA models)
-- **PDF Generation**: Puppeteer
-- **Template Engine**: Handlebars
-
-### Development Tools
-
-- **TypeScript Compiler**: tsc
-- **Dev Server**: nodemon
-- **Runtime Loader**: ts-node
-- **HTTP Logger**: morgan
-
-### Environment
-
-- **Config**: dotenv
-- **Type Definitions**: @types/* packages
+**🔐 Authentication & Authorization:** Secure JWT-based authentication with role-based access control (Admin/Cashier)
+**📦 Product Management:** Complete CRUD operations, real-time stock tracking, reorder alerts, and vendor management
+**🛒 Purchase Management:** Track supplier purchases with automatic stock updates and transaction history
+**💰 Sales & POS:** Fast POS interface with automatic stock deduction, PDF invoices, and multiple payment methods
+**📊 Reports & Analytics:** Real-time revenue tracking, COGS calculation, top products analysis, and visual charts
+**🤖 AI-Powered Insights:** Natural language queries, automated business insights, and smart reorder suggestions via Groq LLM
+**📄 PDF Generation:** Server-side invoice generation and client-side report export
+**🎨 Modern UI:** Responsive TailwindCSS design with interactive dashboard and real-time data visualization
 
 ---
 
