@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { config } from '../config';
 import { User, IUser } from '../models';
+import { JwtPayloadWithUserId } from '../utils/jwt';
 
 export interface AuthRequest extends Request {
   user?: IUser;
@@ -22,7 +23,7 @@ export const authenticateToken = async (
       return;
     }
 
-    const decoded = jwt.verify(token, config.jwt.secret) as { userId: string };
+    const decoded = jwt.verify(token, config.jwt.secret) as JwtPayloadWithUserId;
     
     const user = await User.findById(decoded.userId);
     if (!user) {

@@ -1,5 +1,9 @@
-import jwt, { SignOptions, Secret } from 'jsonwebtoken';
+import jwt, { SignOptions, Secret, JwtPayload } from 'jsonwebtoken';
 import { config } from '../config';
+
+export interface JwtPayloadWithUserId extends JwtPayload {
+  userId: string;
+}
 
 export const generateToken = (userId: string): string => {
   return jwt.sign({ userId }, config.jwt.secret as Secret, {
@@ -13,6 +17,6 @@ export const generateRefreshToken = (userId: string): string => {
   });
 };
 
-export const verifyToken = (token: string): { userId: string } => {
-  return jwt.verify(token, config.jwt.secret as Secret) as { userId: string };
+export const verifyToken = (token: string): JwtPayloadWithUserId => {
+  return jwt.verify(token, config.jwt.secret as Secret) as JwtPayloadWithUserId;
 };
