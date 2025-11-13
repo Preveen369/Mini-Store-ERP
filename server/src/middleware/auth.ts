@@ -23,7 +23,7 @@ export const authenticateToken = async (
       return;
     }
 
-    const decoded = jwt.verify(token, config.jwt.secret) as JwtPayloadWithUserId;
+    const decoded = jwt.verify(token, config.jwt.secret as string) as unknown as JwtPayloadWithUserId;
     
     const user = await User.findById(decoded.userId);
     if (!user) {

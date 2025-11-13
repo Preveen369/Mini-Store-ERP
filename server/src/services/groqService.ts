@@ -19,9 +19,9 @@ export class GroqService {
   private model: string;
 
   constructor() {
-    this.apiKey = config.groq.apiKey;
-    this.baseUrl = config.groq.baseUrl;
-    this.model = config.groq.model;
+    this.apiKey = config.groq.apiKey || '';
+    this.baseUrl = config.groq.baseUrl || 'https://api.groq.com/openai/v1';
+    this.model = config.groq.model || 'llama-3.1-8b-instant';
   }
 
   async chat(messages: GroqMessage[]): Promise<string> {
