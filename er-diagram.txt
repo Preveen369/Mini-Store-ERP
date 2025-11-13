@@ -1,6 +1,6 @@
 ┌──────────────────────────────────────────────────────────────────────┐
 │                           USER (Central Entity)                      │
-│ • email, passwordHash, name, phone, roles, otpSecret                 │
+│ • email, passwordHash, name, roles, otpSecret                        │
 └────────┬─────────────────────────────────────────────────────────────┘
          │
          ├──► createdBy ────────────────────┐
@@ -16,64 +16,64 @@
          │                                       │ productId (ref)
          │                                       │
          │                                       ▼
-         ├──► createdBy ──────────────► ┌────────────────────────────┐
-         │    (optional for             │   STOCK TRANSACTION        │
+         ├──► createdBy ──────────────►  ┌────────────────────────────┐
+         │    (optional for              │   STOCK TRANSACTION        │
          │     adjustments)              │ • productId (required)     │
          │                               │ • type: purchase/sale/     │
          │    ┌──────────────────────────┤        adjustment          │
          │    │                          │ • qty, unitPrice           │
-         │    │        ┌─────────────────┤ • saleId (optional)        │
-         │    │        │                 │ • purchaseId (optional)    │
-         │    │        │                 │ • createdBy (optional)     │
-         │    │        │                 │ • note, date               │
-         │    │        │                 └────────────────────────────┘
-         │    │        │                          ▲         ▲
-         │    │        │                          │         │
-         │    │        │                    saleId│         │purchaseId
-         │    │        │                          │         │
-         │    │        │                 ┌────────┴──────┐  │
-         ├──► │createdBy│────────────────┤     SALE      │  │
-         │    │        │                 │ • invoiceNumber│  │
-         │    │        │                 │ • customer     │  │
-         │    │        │                 │ • items[]      │  │
-         │    │        │                 │   - productId  │  │
-         │    │        │                 │   - qty, prices│  │
-         │    │        │                 │ • subtotal     │  │
-         │    │        │                 │ • taxes        │  │
-         │    │        │                 │ • discount     │  │
-         │    │        │                 │ • total        │  │
-         │    │        │                 │ • paymentMethod│  │
-         │    │        │                 │ • pdfUrl       │  │
-         │    │        │                 └────────────────┘  │
-         │    │        │                                     │
-         │    │        │                 ┌────────────────────┘
-         │    │        │                 │
-         │    │        │                 ▼
-         │    │        │            ┌──────────────────┐
+         │    │         ┌────────────────┤ • saleId (optional)        │
+         │    │         │                │ • purchaseId (optional)    │
+         │    │         │                │ • createdBy (optional)     │
+         │    │         │                │ • note, date               │
+         │    │         │                └────────────────────────────┘
+         │    │         │                          ▲         ▲
+         │    │         │                          │         │
+         │    │         │                    saleId│         │purchaseId
+         │    │         │                          │         │
+         │    │         │                 ┌────────┴───────┐ │
+         ├──► │createdBy│─────────────────┤     SALE       │ │
+         │    │         │                 │ • invoiceNumber│ │
+         │    │         │                 │ • customer     │ │
+         │    │         │                 │ • items[]      │ │
+         │    │         │                 │   - productId  │ │
+         │    │         │                 │   - qty, prices│ │
+         │    │         │                 │ • subtotal     │ │
+         │    │         │                 │ • taxes        │ │
+         │    │         │                 │ • discount     │ │
+         │    │         │                 │ • total        │ │
+         │    │         │                 │ • paymentMethod│ │
+         │    │         │                 │ • pdfUrl       │ │
+         │    │         │                 └────────────────┘ │
+         │    │         │                                    │
+         │    │         │                 ┌──────────────────┘
+         │    │         │                 │
+         │    │         │                 ▼
+         │    │         │            ┌──────────────────┐
          ├──► │createdBy│───────────►│    PURCHASE      │
-         │    │        │            │ • supplier       │
-         │    │        │            │ • items[]        │
-         │    │        │            │   - productId    │
-         │    │        │            │   - qty          │
-         │    │        │            │   - costPrice    │
-         │    │        │            │ • totalAmount    │
-         │    │        │            │ • invoiceRef     │
-         │    │        │            │ • date           │
-         │    │        │            └──────────────────┘
-         │    │        │
-         │    │        │            ┌──────────────────┐
+         │    │         │            │ • supplier       │
+         │    │         │            │ • items[]        │
+         │    │         │            │   - productId    │
+         │    │         │            │   - qty          │
+         │    │         │            │   - costPrice    │
+         │    │         │            │ • totalAmount    │
+         │    │         │            │ • invoiceRef     │
+         │    │         │            │ • date           │
+         │    │         │            └──────────────────┘
+         │    │         │
+         │    │         │            ┌──────────────────┐
          ├──► │createdBy│───────────►│    EXPENSE       │
-         │    │        │            │ • category       │
-         │    │        │            │ • amount         │
-         │    │        │            │ • note           │
-         │    │        │            │ • date           │
-         │    │        │            └──────────────────┘
-         │    │        │
-         │    │        │            ┌──────────────────┐
-         └────┴────────┴────────────┤    SETTING       │
-                                    │ • key (unique)   │
-                                    │ • value (mixed)  │
-                                    └──────────────────┘
+         │    │         │            │ • category       │
+         │    │         │            │ • amount         │
+         │    │         │            │ • note           │
+         │    │         │            │ • date           │
+         │    │         │            └──────────────────┘
+         │    │         │
+         │    │         │            ┌──────────────────┐
+         └────┴─────────┴────────────┤    SETTING       │
+                                     │ • key (unique)   │
+                                     │ • value (mixed)  │
+                                     └──────────────────┘
 
 ═══════════════════════════════════════════════════════════════════════
 LEGEND:
@@ -81,7 +81,10 @@ LEGEND:
   │     : Connects related fields
   (required) : Field must be populated
   (optional) : Field is optional
-  USER : may be CASHIER(limited access) or ADMIN(full access)
+  
+  USER ROLES:
+  • CASHIER - Limited access (can create sales, view products)
+  • ADMIN   - Full access (complete CRUD operations, system management)
 ═══════════════════════════════════════════════════════════════════════
 
 RELATIONSHIP SUMMARY:
