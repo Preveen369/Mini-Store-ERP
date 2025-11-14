@@ -70,7 +70,8 @@ client/
 │   ├── lib/                # Libraries and utilities
 │   │   └── api.ts          # Axios API client
 │   ├── pages/              # Application pages/routes
-│   │   ├── AIAssistantPage.tsx .... 
+│   │   ├── AIAssistantPage.tsx
+│   │   ├── .... other pages
 │   ├── store/              # Zustand state management
 │   │   └── authStore.ts    # Authentication state
 │   ├── types/              # TypeScript type definitions
