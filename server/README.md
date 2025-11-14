@@ -28,42 +28,25 @@ server/
 │   │   ├── database.ts       # MongoDB connection setup
 │   │   └── index.ts          # Environment variables config
 │   ├── controllers/          # Route controllers (business logic)
-│   │   ├── authController.ts         # Authentication logic
-│   │   ├── expenseController.ts      # Expense management
-│   │   ├── llmController.ts          # AI/LLM endpoints
-│   │   ├── productController.ts      # Product CRUD
-│   │   ├── purchaseController.ts     # Purchase management
-│   │   ├── reportController.ts       # Analytics & reports
-│   │   └── saleController.ts         # Sales & invoicing
+│   │   ├── authController.ts, expenseController.ts,  llmController.ts,        
+│   │   ├── productController.ts, purchaseController.ts,   
+│   │   └── reportController.ts, saleController.ts   
 │   ├── middleware/           # Custom middleware
-│   │   ├── auth.ts           # JWT authentication middleware
-│   │   ├── errorHandler.ts   # Global error handler
-│   │   └── validator.ts      # Request validation
+│   │   ├── auth.ts, errorHandler.ts, validator.ts  
 │   ├── models/               # Mongoose data models
-│   │   ├── Expense.ts        # Expense schema
-│   │   ├── Product.ts        # Product schema
-│   │   ├── Purchase.ts       # Purchase schema
-│   │   ├── Sale.ts           # Sale schema
-│   │   ├── Setting.ts        # Settings schema
-│   │   ├── StockTransaction.ts # Stock audit trail
-│   │   ├── User.ts           # User schema
-│   │   └── index.ts          # Model exports
+│   │   ├── Expense.ts,Product.ts, Purchase.ts,       
+│   │   ├── Sale.ts, Setting.ts, StockTransaction.ts,
+│   │   ├── User.ts, index.ts       
 │   ├── routes/               # API route definitions
-│   │   ├── authRoutes.ts     # /auth endpoints
-│   │   ├── expenseRoutes.ts  # /expenses endpoints
-│   │   ├── llmRoutes.ts      # /llm endpoints
-│   │   ├── productRoutes.ts  # /products endpoints
-│   │   ├── purchaseRoutes.ts # /purchases endpoints
-│   │   ├── reportRoutes.ts   # /reports endpoints
-│   │   └── saleRoutes.ts     # /sales endpoints
+│   │   ├── authRoutes.ts, expenseRoutes.ts,  llmRoutes.ts,        
+│   │   ├── productRoutes.ts, purchaseRoutes.ts,   
+│   │   └── reportRoutes.ts, saleRoutes.ts   
 │   ├── services/             # Business logic services
 │   │   ├── groqService.ts    # Groq LLM integration
 │   │   └── pdfService.ts     # PDF generation service
 │   ├── utils/                # Utility functions
-│   │   ├── cache.ts          # Caching utilities
-│   │   ├── crypto.ts         # Encryption helpers
-│   │   ├── jwt.ts            # JWT token utilities
-│   │   └── settings.ts       # Settings management
+│   │   ├── cache.ts, crypto.ts,       
+│   │   ├── jwt.ts, settings.ts       
 │   ├── app.ts                # Express app configuration
 │   └── index.ts              # Server entry point
 ├── public/                   # Static files (PDFs, uploads)
@@ -118,7 +101,7 @@ server/
    PORT=5000
 
    # Database
-   MONGODB_URI=mongodb://localhost:27017/mini-store-erp
+   MONGODB_URI=your-mongodb-url-connection-link
 
    # JWT Configuration
    JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
