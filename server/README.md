@@ -727,44 +727,40 @@ Use **Postman** or **Thunder Client** to test API endpoints. Import endpoints fr
 
 ---
 
----
-
 ## 🐛 Troubleshooting
 
-**MongoDB Connection Error**: Ensure MongoDB is running and `MONGODB_URI` is correct in `.env`
-
-**JWT Authentication Error**: Verify `JWT_SECRET` is set and token is sent as `Authorization: Bearer <token>`
-
-**Groq API Error**: Check `GROQ_API_KEY` in `.env` file and verify it's active
-
-**CORS Error**: Set `CORS_ORIGIN` to match frontend URL in `.env`
-
-**Port Already in Use**: Change `PORT` in `.env` or kill the process: `npx kill-port 5000`
+- **MongoDB Connection Error**: Ensure MongoDB is running and `MONGODB_URI` is correct in `.env`
+- **JWT Authentication Error**: Verify `JWT_SECRET` is set and token is sent as `Authorization: Bearer <token>`
+- **Groq API Error**: Check `GROQ_API_KEY` in `.env` file and verify it's active
+- **CORS Error**: Set `CORS_ORIGIN` to match frontend URL in `.env`
+- **Port Already in Use**: Change `PORT` in `.env` or kill the process: `npx kill-port 5000`
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please fork the repository, create a feature branch, and submit a pull request.
+Pull requests are welcome! Feel free to fork the repository and suggest improvements.
+
+Steps to contribute:
+```bash
+# 1. Fork the repository
+# 2. Create a feature branch
+git checkout -b feature-name
+# 3. Commit your changes
+git commit -m "Add feature description"
+# 4. Push to GitHub
+git push origin feature-name
+# 5. Open a Pull Request
+```
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details.
-
----
-
-## 📧 Support
-
-For issues or questions:
-
-- 📩 Email: <your-email@example.com>
-- 🐛 Issues: [GitHub Issues](https://github.com/your-username/mini-store-erp/issues)
-- 📖 Docs: [Main README](../README.md)
+## 📧 Contact
+For queries or suggestions:
+- 📩 Email: [spreveen123@gmail.com](mailto:spreveen123@gmail.com)
+- 🌐 LinkedIn: [www.linkedin.com/in/preveen-s-17250529b/](https://www.linkedin.com/in/preveen-s-17250529b/)
 
 ---
 
-**Built with ❤️ using Node.js + TypeScript + Express.js + MongoDB**
-
-
+## 🌟 Show Your Support
+If you like this project, please consider giving it a ⭐ on GitHub!
