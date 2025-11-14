@@ -70,16 +70,7 @@ client/
 │   ├── lib/                # Libraries and utilities
 │   │   └── api.ts          # Axios API client
 │   ├── pages/              # Application pages/routes
-│   │   ├── AIAssistantPage.tsx
-│   │   ├── DashboardPage.tsx
-│   │   ├── ExpensesPage.tsx
-│   │   ├── InsightsPage.tsx
-│   │   ├── LoginPage.tsx
-│   │   ├── ProductsPage.tsx
-│   │   ├── PurchasesPage.tsx
-│   │   ├── RegisterPage.tsx
-│   │   ├── ReportsPage.tsx
-│   │   └── SalesPage.tsx
+│   │   ├── AIAssistantPage.tsx .... 
 │   ├── store/              # Zustand state management
 │   │   └── authStore.ts    # Authentication state
 │   ├── types/              # TypeScript type definitions
@@ -89,17 +80,10 @@ client/
 │   ├── index.css           # Global styles with Tailwind
 │   └── main.tsx            # Application entry point
 ├── .env                    # Environment variables (not in git)
-├── .gitignore              # Git ignore rules
-├── eslint.config.js        # ESLint configuration
-├── index.html              # HTML template
-├── package.json            # Dependencies and scripts
-├── postcss.config.js       # PostCSS configuration
-├── tailwind.config.js      # TailwindCSS configuration
-├── tsconfig.json           # TypeScript configuration
-├── tsconfig.app.json       # App-specific TypeScript config
-├── tsconfig.node.json      # Node-specific TypeScript config
-├── vite.config.ts          # Vite configuration
-└── README.md               # This file
+├   # Configuration files
+├── .gitignore file, eslint.config.js, index.html, package.json, postcss.config.js,   
+├──  tailwind.config.js, tsconfig.json, tsconfig.app.json, tsconfig.node.json, vite.config.ts        
+└── README.md (client)      # This file
 ```
 
 ---
@@ -213,10 +197,6 @@ The client communicates with the backend API using Axios. API configuration is i
 ### Deployment on Vercel / Netlify
 
 Similar process - set `VITE_API_URL` environment variable to your backend URL.
-
----
-
-## � Troubleshooting
 
 ---
 
