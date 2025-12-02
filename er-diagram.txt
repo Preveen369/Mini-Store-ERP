@@ -82,7 +82,7 @@ LEGEND:
   (required) : Field must be populated
   (optional) : Field is optional
   
-  USER ROLES:
+USER ROLES:
   • CASHIER - Limited access (can create sales, view products)
   • ADMIN   - Full access (complete CRUD operations, system management)
 ═══════════════════════════════════════════════════════════════════════
