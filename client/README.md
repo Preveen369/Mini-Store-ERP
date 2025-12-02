@@ -1,4 +1,4 @@
-# 🌟 Mini-Store-ERP - Frontend Client
+# 🌟 Mini-Store-ERP - Frontend (Client)
 
 The **Mini-Store-ERP Client** is a modern, responsive React-based frontend application built with TypeScript and Vite. It provides an intuitive user interface for managing retail store operations including inventory, sales, purchases, expenses, and AI-powered business insights.
 
@@ -21,36 +21,17 @@ The **Mini-Store-ERP Client** is a modern, responsive React-based frontend appli
 
 ## 🛠️ Tech Stack
 
-### Core Technologies
-- **React 18**: Modern React with hooks and concurrent features
-- **TypeScript**: Type-safe development
-- **Vite**: Lightning-fast build tool and dev server
-
-### UI & Styling
-- **TailwindCSS**: Utility-first CSS framework
-- **Lucide React**: Beautiful icon library
-- **React Hot Toast**: Elegant toast notifications
-
-### Routing & State
-- **React Router v6**: Client-side routing
-- **Zustand**: Lightweight state management
-
-### Data & APIs
-- **Axios**: HTTP client for API requests
-- **RESTful API Integration**: Backend communication
-
-### Charts & Visualization
-- **Recharts**: Composable charting library
-
-### PDF Generation
-- **jsPDF**: Client-side PDF generation
-- **jsPDF-AutoTable**: Table generation for reports
-- **html2canvas**: HTML to canvas conversion
-
-### Development Tools
-- **ESLint**: Code linting
-- **PostCSS**: CSS processing
-- **Autoprefixer**: CSS vendor prefixing
+### Frontend (Client)
+- **Framework**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Routing**: React Router v6
+- **State Management**: Zustand
+- **UI Framework**: TailwindCSS
+- **Charts**: Recharts
+- **Icons**: Lucide React
+- **HTTP Client**: Axios
+- **PDF Export**: jsPDF, jsPDF-AutoTable
+- **Notifications**: React Hot Toast
 
 ---
 
