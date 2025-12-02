@@ -1,4 +1,4 @@
-# 🌟 Mini-Store-ERP - Backend Server
+# 🌟 Mini-Store-ERP - Backend (Server)
 
 The **Mini-Store-ERP Backend Server** is a robust, scalable RESTful API built with Node.js, Express.js, and TypeScript. It powers the complete retail store management system with secure authentication, comprehensive inventory management, sales tracking, AI-powered business insights using Groq LLM, and automated PDF invoice generation. The server implements industry-standard security practices including JWT authentication, rate limiting, input validation, and MongoDB injection prevention.
 
@@ -16,6 +16,20 @@ The **Mini-Store-ERP Backend Server** is a robust, scalable RESTful API built wi
 - **🤖 AI-Powered Insights**: Natural language queries, automated business insights, and smart reorder suggestions via Groq LLM
 - **📄 PDF Generation**: Server-side invoice generation and client-side report export
 - **🎨 Modern UI**: Responsive TailwindCSS design with interactive dashboard and real-time data visualization
+
+---
+
+## 🛠️ Tech Stack
+
+### Backend (Server)
+- **Runtime**: Node.js + TypeScript
+- **Framework**: Express.js
+- **Database**: MongoDB (Mongoose ODM)
+- **Authentication**: JWT + bcrypt
+- **LLM Integration**: Groq API (LLaMA models)
+- **PDF Generation**: jsPDF
+- **Security**: Helmet, CORS, Rate Limiting, express-validator
+- **Dev Tools**: nodemon, ts-node
 
 ---
 
