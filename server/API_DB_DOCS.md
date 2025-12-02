@@ -3,9 +3,9 @@
 The **Mini-Store-ERP API and DB Documentation**  provides details on available REST API endpoints, request/response formats, and the underlying database schema for building integrations or understanding backend data models.
 
 Use this documentation to:
-- Explore authentication, product, purchase, sales, expense, report, and AI endpoints.
-- Review example requests and responses for each API route.
-- Understand the structure of database models for users, products, transactions, and more.
+- 🪄 Explore authentication, product, purchase, sales, expense, report, and AI endpoints.
+- 🪄 Review example requests and responses for each API route.
+- 🪄 Understand the structure of database models for users, products, transactions, and more.
 
 For questions or feedback, refer to the project repository
 
@@ -161,16 +161,12 @@ Authorization: Bearer <token>
 Content-Type: application/json
 
 {
-  "supplier": {
-    "name": "ABC Wholesale",
-    "contact": "+1234567890",
-    "address": "123 Supply St"
-  },
+  "supplier": "ABC Wholesale",
   "items": [
     {
       "productId": "64abc...",
       "qty": 50,
-      "unitPrice": 12.50
+      "costPrice": 12.50
     }
   ],
   "invoiceRef": "INV-2025-001",
@@ -410,21 +406,18 @@ Content-Type: application/json
 
 ```typescript
 {
-  supplier: {
-    name: string (required)
-    contact: string
-    address: string
-  }
+  supplier: string (required)
   items: [{
     productId: ObjectId (ref: Product, required)
     qty: number (required)
-    unitPrice: number (required)
+    costPrice: number (required)
   }]
   totalAmount: number (required)
   invoiceRef: string
   date: Date (required)
-  createdBy: ObjectId (ref: User)
+  createdBy: ObjectId (ref: User, required)
   createdAt: Date
+  updatedAt: Date
 }
 ```
 
@@ -432,27 +425,28 @@ Content-Type: application/json
 
 ```typescript
 {
-  invoiceNumber: string (unique, auto-generated)
+  invoiceNumber: string (unique, required)
   customer: {
     name: string
     phone: string
-    email: string
   }
   items: [{
     productId: ObjectId (ref: Product, required)
-    productName: string
+    name: string (required)
     qty: number (required)
     sellPrice: number (required)
+    costPrice: number (required)
   }]
   subtotal: number (required)
   taxes: number (default: 0)
   discount: number (default: 0)
   total: number (required)
-  paymentMethod: 'cash' | 'card' | 'upi' | 'credit'
+  paymentMethod: 'cash' | 'card' | 'upi' | 'credit' (required)
+  date: Date (default: Date.now)
+  createdBy: ObjectId (ref: User, required)
   pdfUrl: string
-  notes: string
-  createdBy: ObjectId (ref: User)
   createdAt: Date
+  updatedAt: Date
 }
 ```
 
@@ -464,11 +458,13 @@ Content-Type: application/json
   type: 'purchase' | 'sale' | 'adjustment' (required)
   qty: number (required)
   unitPrice: number (required)
-  referenceId: ObjectId  // saleId or purchaseId
-  referenceType: 'Sale' | 'Purchase' | 'Adjustment'
-  note: string
-  createdBy: ObjectId (ref: User)
+  saleId: ObjectId (ref: Sale, optional)
+  purchaseId: ObjectId (ref: Purchase, optional)
+  createdBy: ObjectId (ref: User, optional) // For manual adjustments
+  note: string // For adjustment reasons
+  date: Date (default: Date.now)
   createdAt: Date
+  updatedAt: Date
 }
 ```
 
