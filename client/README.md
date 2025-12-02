@@ -80,7 +80,6 @@ client/
 │   ├── App.tsx             # Main App component with routing
 │   ├── index.css           # Global styles with Tailwind
 │   └── main.tsx            # Application entry point
-├── .env                    # Environment variables (not in git)
 ├   # Configuration files
 ├── .gitignore file, eslint.config.js, index.html, package.json, postcss.config.js,   
 ├──  tailwind.config.js, tsconfig.json, tsconfig.app.json, tsconfig.node.json, vite.config.ts        
@@ -111,18 +110,7 @@ client/
    npm install
    ```
 
-3. **Create environment file**
-
-   Create a `.env` file in the client directory:
-
-   ```env
-   VITE_API_URL=http://localhost:5000/api/v1
-   ```
-
-   **Environment Variables:**
-   - `VITE_API_URL`: Backend API base URL (required)
-
-4. **Start development server**
+3. **Start development server**
 
    ```bash
    npm run dev
@@ -172,9 +160,11 @@ npm run lint
 
 The client communicates with the backend API using Axios. API configuration is in `src/lib/api.ts`.
 
-**Base URL**: Configured via `VITE_API_URL` environment variable
+**Base URL**: Configured via Vite proxy in `vite.config.ts` for seamless development and production
 
-**Features**: Automatic JWT token attachment, global error handling, request/response interceptors
+**Development to Production**: To switch from development to production, simply update the `target` URL in `vite.config.ts` proxy configuration to your deployed backend URL.
+
+**Features**: Automatic JWT token attachment, global error handling, request/response interceptors, CORS handling via Vite proxy
 
 ---
 
@@ -190,14 +180,13 @@ The client communicates with the backend API using Axios. API configuration is i
    - **Build Command**: `cd client && npm install && npm run build`
    - **Publish Directory**: `client/dist`
 
-4. **Add environment variables:**
-   - `VITE_API_URL`: Your deployed backend URL (e.g., `https://your-api.onrender.com/api/v1`)
+4. **Deploy**: Render will automatically build and deploy your application
 
-5. **Deploy**: Render will automatically build and deploy your application
+   Note: The API proxy is configured in `vite.config.ts` to handle backend communication seamlessly.
 
 ### Deployment on Vercel / Netlify
 
-Similar process - set `VITE_API_URL` environment variable to your backend URL.
+Similar process - the API proxy configuration in `vite.config.ts` handles backend communication.
 
 ---
 

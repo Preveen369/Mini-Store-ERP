@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5173,
-    // Proxy API requests to backend server in development
-    // This prevents CORS issues and allows using relative URLs
+    // Proxy API requests to backend server and also used to
+    // prevent CORS issues and allows using relative URLs
     proxy: {
       '/api': {
         target: 'https://mini-store-erp-backend.onrender.com/api/v1',
