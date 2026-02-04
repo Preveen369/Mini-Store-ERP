@@ -1,5 +1,6 @@
 import axios from 'axios';
 import type { AxiosInstance, InternalAxiosRequestConfig, AxiosError } from 'axios';
+import type { RegisterRequest, LoginRequest, AuthResponse } from '../types';
 
 // In development, use relative URLs to leverage Vite's proxy
 // In production, use the full API URL from environment variable
@@ -108,12 +109,12 @@ class ApiClient {
   }
 
   // Auth
-  async register(data: any) {
-    return this.client.post('/auth/register', data);
+  async register(data: RegisterRequest) {
+    return this.client.post<AuthResponse>('/auth/register', data);
   }
 
-  async login(data: any) {
-    return this.client.post('/auth/login', data);
+  async login(data: LoginRequest) {
+    return this.client.post<AuthResponse>('/auth/login', data);
   }
 
   // Products

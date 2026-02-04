@@ -1,5 +1,7 @@
 import { create } from 'zustand';
 import { api } from '../lib/api';
+import axios from 'axios';
+import type { RegisterRequest } from '../types';
 
 interface User {
   id: string;
@@ -35,12 +37,18 @@ export const useAuthStore = create<AuthState>((set) => ({
       localStorage.setItem('user', JSON.stringify(user));
       
       set({ user, token, isAuthenticated: true });
-    } catch (error: any) {
-      throw new Error(error.response?.data?.error || 'Login failed');
+    } catch (error: unknown) {
+      let message = 'Login failed';
+      if (axios.isAxiosError(error)) {
+        message = error.response?.data?.error || error.message || message;
+      } else if (error instanceof Error) {
+        message = error.message;
+      }
+      throw new Error(message);
     }
   },
 
-  register: async (data: any) => {
+  register: async (data: RegisterRequest) => {
     try {
       const response = await api.register(data);
       const { user, token } = response.data;
@@ -49,8 +57,14 @@ export const useAuthStore = create<AuthState>((set) => ({
       localStorage.setItem('user', JSON.stringify(user));
       
       set({ user, token, isAuthenticated: true });
-    } catch (error: any) {
-      throw new Error(error.response?.data?.error || 'Registration failed');
+    } catch (error: unknown) {
+      let message = 'Registration failed';
+      if (axios.isAxiosError(error)) {
+        message = error.response?.data?.error || error.message || message;
+      } else if (error instanceof Error) {
+        message = error.message;
+      }
+      throw new Error(message);
     }
   },
 

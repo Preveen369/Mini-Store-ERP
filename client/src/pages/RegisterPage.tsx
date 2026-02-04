@@ -35,8 +35,9 @@ export default function RegisterPage() {
       await register({ name, email, password, roles: [role] });
       toast.success('Registration successful!');
       navigate('/');
-    } catch (error: any) {
-      toast.error(error.message || 'Registration failed');
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : 'Registration failed';
+      toast.error(message);
     } finally {
       setIsLoading(false);
     }

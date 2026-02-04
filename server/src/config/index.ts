@@ -7,7 +7,7 @@ export const config = {
   port: parseInt(process.env.PORT || '5000', 10),
   
   mongodb: {
-    uri: process.env.MONGODB_URI || 'mongodb://localhost:27017/mini-store-erp',
+    uri: process.env.MONGODB_URI || 'mongodb+srv://spreveen123:preveens@mini-store-erp.1jd7whk.mongodb.net/mini-store?appName=Mini-Store-ERP',
   },
   
   jwt: {
@@ -25,7 +25,6 @@ export const config = {
   otp: {
     expiryMinutes: parseInt(process.env.OTP_EXPIRY_MINUTES || '5', 10),
   },
-  
   cors: {
     origin: process.env.CORS_ORIGIN || 'https://mini-store-erp-app.onrender.com',
   },
