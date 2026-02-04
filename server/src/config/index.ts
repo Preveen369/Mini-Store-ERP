@@ -7,7 +7,7 @@ export const config = {
   port: parseInt(process.env.PORT || '5000', 10),
   
   mongodb: {
-    uri: process.env.MONGODB_URI || 'mongodb+srv://spreveen123:preveens@mini-store-erp.1jd7whk.mongodb.net/mini-store?appName=Mini-Store-ERP',
+    uri: process.env.MONGODB_URI || '',
   },
   
   jwt: {
